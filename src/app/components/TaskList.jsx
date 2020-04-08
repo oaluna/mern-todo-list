@@ -1,9 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { requestTaskCreation } from '../store/Mutations'
+import * as mutations from '../store/Mutations'
 import { Link } from 'react-router-dom'
 
-export const TaskList = ({ tasks, name, id, createNewTask })=>(
+export const TaskList = ({ tasks, name, id, createNewTask, setTaskGroup, setTaskName })=>(
     <div>
         <h3>
         {name}
@@ -35,6 +35,12 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, {id})=>({
     createNewTask(){
         dispatch(requestTaskCreation(id));
+    },
+    setTaskGroup(e){
+        dispatch(setTaskGroup(id,e.target.value));
+    },
+    setTaskName(e){
+        dispatch(setTaskName(id,e.target.value));
     }
 });
 
