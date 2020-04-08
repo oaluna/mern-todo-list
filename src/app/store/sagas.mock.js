@@ -11,3 +11,5 @@ export function* taskCreationSaga() {
         console.log("Got group ID", groupId)
     }
 }
+
+//.mock for testing purposes. indicates mock business data
