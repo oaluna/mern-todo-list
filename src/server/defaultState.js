@@ -1,11 +1,15 @@
+import md5 from 'md5';
 export const defaultState = {
     users:[{
         id:"U1",
-        name:"Dev"
-       
+        name:"Dev",
+        passwordHash:md5("TUPLES"),
+        friends:[`U2`]
     },{
         id:"U2",
-        name:"C. Eeyo"
+        name:"C. Eeyo",
+        passwordHash:md5("PROFITING"),
+        friends:[]
     }],
     groups:[{
         name:"To Do",
